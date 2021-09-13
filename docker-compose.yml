@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  web:
+    image: nginx
+    depends_on:
+      - db
+      - otherdb
+
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+  
+  otherdb:
+    image: mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+  
+  mongodb:
+    image: mongo
+  
+  othermongo:
+    image: mongo
